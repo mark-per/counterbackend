@@ -25,8 +25,7 @@ public class CounterController {
     // Create a counter
     @PostMapping
     public ResponseEntity<String> createCounter(@RequestBody Counter counter) {
-        Counter savedCounter = counterService.createCounter(counter);
-        return ResponseEntity.ok("Counter created successfully");
+        return ResponseEntity.ok(counterService.createCounter(counter));
     }
 
     // Increment a counter

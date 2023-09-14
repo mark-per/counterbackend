@@ -7,7 +7,7 @@ import java.util.List;
 public interface CounterService {
     List<Counter> getAllCounters();
 
-    Counter createCounter(Counter counter);
+    String createCounter(Counter counter);
 
     Counter incrementCounter(Long id);
 

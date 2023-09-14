@@ -22,8 +22,13 @@ public class CounterServiceImpl implements CounterService {
     }
 
     @Override
-    public Counter createCounter(Counter counter) {
-        return counterRepository.save(counter);
+    public String createCounter(Counter counter) {
+        Counter counterExists = counterRepository.findByName(counter.getName());
+        if(counterExists == null) {
+            counterRepository.save(counter);
+            return "Counter created successfully";
+        }
+        return "Counter with name "+counter.getName()+" already exists";
     }
 
     @Override
