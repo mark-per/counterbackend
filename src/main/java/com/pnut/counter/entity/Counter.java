@@ -14,6 +14,6 @@ public class Counter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int count;
+    private long count;
 }
 
